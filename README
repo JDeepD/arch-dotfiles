@@ -1,0 +1,9 @@
+Dotfiles repository
+
+Required packages:
+
+1. neovim & vim
+2. vifm
+3. starship prompt
+4. zsh(set as default)
+
