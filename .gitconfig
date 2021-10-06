@@ -1,0 +1,10 @@
+[init]
+	defaultBranch = main
+[user]
+	email = jaydeepjd.8914@gmail.com
+	name = Jaydeep Das
+	signingKey = 3E688D907E91971D
+[core]
+	editor = nvim
+[gpg]
+	program = gpg2
