@@ -1,4 +1,6 @@
 .cache
+.pki
+.vscode
 .lesshst
 .ssh
 .gnupg

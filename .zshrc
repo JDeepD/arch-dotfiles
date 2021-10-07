@@ -1,6 +1,5 @@
 source ~/antigen/antigen.zsh
 
-
 # Lines configured by zsh-newuser-install
 HISTFILE=~/zsh-cache/.histfile
 HISTSIZE=1000
@@ -69,5 +68,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen apply
 
+# Environment variables
+export STARSHIP_CONFIG=~/.config/starship/config.toml
 
 eval "$(starship init zsh)"
