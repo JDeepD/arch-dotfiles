@@ -37,5 +37,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     "devicons for vifm
     Plug 'ryanoasis/vim-devicons'
 
-
-call plug#end()
+    
+    
+    call plug#end()

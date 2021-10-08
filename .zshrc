@@ -60,8 +60,11 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # Aliases
 alias .zshrc="nvim ~/.zshrc"
+alias starship.config="nvim ~/.config/starship/config.toml"
 alias init.vim="nvim ~/.config/nvim/init.vim"
+alias plugins.vim="nvim ~/.config/nvim/plugged/plugins.vim"
 alias szshrc="source ~/.zshrc"
+alias c="clear"
 
 # Antigen Plugins
 antigen bundle zsh-users/zsh-syntax-highlighting
