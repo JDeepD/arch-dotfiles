@@ -37,6 +37,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     "devicons for vifm
     Plug 'ryanoasis/vim-devicons'
 
-    
-    
+    "Autocomplete
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
     call plug#end()
