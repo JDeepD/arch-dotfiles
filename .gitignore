@@ -1,4 +1,6 @@
 .cache
+.python_history
+.npm
 .pki
 .vscode
 .lesshst

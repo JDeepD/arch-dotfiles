@@ -74,4 +74,10 @@ antigen apply
 # Environment variables
 export STARSHIP_CONFIG=~/.config/starship/config.toml
 
+# Functions
+function cheat {
+  curl "https://cheat.sh/$1"
+}
+
+
 eval "$(starship init zsh)"
