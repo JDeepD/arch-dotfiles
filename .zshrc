@@ -55,7 +55,7 @@ alias init.vim="nvim ~/.config/nvim/init.vim"
 alias plugins.vim="nvim ~/.config/nvim/plugged/plugins.vim"
 alias szshrc="source ~/.zshrc"
 alias c="clear"
-alias r="ranger"
+alias rg="ranger"
 
 # Antigen Plugins
 antigen bundle zsh-users/zsh-syntax-highlighting
