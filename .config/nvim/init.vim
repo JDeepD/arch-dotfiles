@@ -1,9 +1,9 @@
 source $HOME/.config/nvim/plugged/plugins.vim
 
-
 " Basic configs
 set encoding=utf-8
 set hidden
+set termguicolors
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
@@ -15,7 +15,8 @@ set number relativenumber
 let mapleader = " "
 syntax on
 imap jj <Esc>
-
+autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3.9' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3.9' shellescape(@%, 1)<CR>
 
 "vim-smoothie keymaps
 nmap <C-k> <C-u>k
@@ -30,7 +31,6 @@ if exists('g:vscode')
 	imap jj <Esc>
 else
 	"Gruvbox configs
-	let g:gruvbox_contrast_dark = 'hard'
 	colorscheme gruvbox
 	" Airline Theme
 	let g:airline_theme='deus'
@@ -112,3 +112,10 @@ endif
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+
+" NERDTree config 
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>

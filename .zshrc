@@ -26,16 +26,6 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 bindkey -M viins 'jj' vi-cmd-mode #Maps the jj key to Escape 
 
-# A modification for vifm to open the directory navigated to using vifm 
-vicd()
-{
-    local dst="$(command vifm --choose-dir - "$@")"
-    if [ -z "$dst" ]; then
-        echo 'Directory picking cancelled/failed'
-        return 1
-    fi
-    cd "$dst"
-}
 
 # Change cursor shape for different vi modes. Use `|` for insert and █ for normal mode
 function zle-keymap-select {
@@ -65,6 +55,7 @@ alias init.vim="nvim ~/.config/nvim/init.vim"
 alias plugins.vim="nvim ~/.config/nvim/plugged/plugins.vim"
 alias szshrc="source ~/.zshrc"
 alias c="clear"
+alias r="ranger"
 
 # Antigen Plugins
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -73,6 +64,8 @@ antigen apply
 
 # Environment variables
 export STARSHIP_CONFIG=~/.config/starship/config.toml
+export RANGER_LOAD_DEFAULT_RC=FALSE
+export EDITOR=nvim
 
 # Functions
 function cheat {

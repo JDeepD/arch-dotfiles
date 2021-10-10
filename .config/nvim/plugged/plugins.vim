@@ -40,4 +40,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     "Autocomplete
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+    "File-Explorer in neovim
+    Plug 'preservim/nerdtree'
+
     call plug#end()
