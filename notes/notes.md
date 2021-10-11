@@ -25,3 +25,7 @@ to specific keypresses. Gnome comes with an inbuilt Keybinding Shortcut manager(
 
 I have mapped `<F10>` to `screenkey -p fixed -g 744x67+623+1010` and `<F9>` to `pkill -f screenkey`.
 
+Want to change fonts? , Run `screenkey --show-settings` and configure the settings accordingly. It has an inbuilt area-selector
+but the disadvantage of using it is that if you map this command to a keypress, then you need to select the area every time you 
+press that key.
+
