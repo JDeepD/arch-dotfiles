@@ -14,7 +14,7 @@
 
 ## Display Keystrokes on Screen:
 
-Install [`Screenkey`](https://gitlab.com/screenkey/screenkey) and [slop](https://github.com/naelstrof/slop). 
+Install [Screenkey](https://gitlab.com/screenkey/screenkey) and [slop](https://github.com/naelstrof/slop). 
 Run `slop -n -g '%g'`. A crosshair should appear. Using that crosshair, select the area in which you want 
 Screenkey to display the keystrokes. Get the geometry data(eg:`778x81+514+983%`). Now run Screenkey with these
 data : `screenkey -p fixed -g <geometry data>`. In my case, its `screenkey -p fixed -g 744x67+623+1010`.
