@@ -1,4 +1,6 @@
 autostart
+vifm/vifminfo.json
+vifm/vifm-help.txt
 obs-studio
 guake
 mimeapps.list
