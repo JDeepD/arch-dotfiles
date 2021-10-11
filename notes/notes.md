@@ -14,14 +14,14 @@
 
 ## Display Keystrokes on Screen:
 
-	Install [`Screenkey`](https://gitlab.com/screenkey/screenkey) and [slop](https://github.com/naelstrof/slop). 
-	Run `slop -n -g '%g'`. A crosshair should appear. Using that crosshair, select the area in which you want 
-	Screenkey to display the keystrokes. Get the geometry data(eg:`778x81+514+983%`). Now run Screenkey with these
-	data : `screenkey -p fixed -g <geometry data>`. In my case, its `screenkey -p fixed -g 744x67+623+1010`.
+Install [`Screenkey`](https://gitlab.com/screenkey/screenkey) and [slop](https://github.com/naelstrof/slop). 
+Run `slop -n -g '%g'`. A crosshair should appear. Using that crosshair, select the area in which you want 
+Screenkey to display the keystrokes. Get the geometry data(eg:`778x81+514+983%`). Now run Screenkey with these
+data : `screenkey -p fixed -g <geometry data>`. In my case, its `screenkey -p fixed -g 744x67+623+1010`.
 
-	Pro Tip: Use a Keybinding manager like [XBindkeys](https://wiki.archlinux.org/title/Xbindkeys) to bind these commands
-	to specific keypresses. Gnome comes with an inbuilt Keybinding Shortcut manager(Under Settings>Keyboard>Shortcut). 
-	*Donot forget to map a kill switch for Screenkey(Otherwise you will have multiple overlaying instances which can be annoying)*
+Pro Tip: Use a Keybinding manager like [XBindkeys](https://wiki.archlinux.org/title/Xbindkeys) to bind these commands
+to specific keypresses. Gnome comes with an inbuilt Keybinding Shortcut manager(Under Settings>Keyboard>Shortcut). 
+*Donot forget to map a kill switch for Screenkey(Otherwise you will have multiple overlaying instances which can be annoying)*
 
-	I have mapped `<F10>` to `screenkey -p fixed -g 744x67+623+1010` and `<F9>` to `pkill -f screenkey`.
+I have mapped `<F10>` to `screenkey -p fixed -g 744x67+623+1010` and `<F9>` to `pkill -f screenkey`.
 
