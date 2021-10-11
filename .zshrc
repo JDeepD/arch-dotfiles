@@ -72,5 +72,15 @@ function cheat {
   curl "https://cheat.sh/$1"
 }
 
+function vicd {
+  local cwd="$(command vifm --choose-dir - "$@")" # cwd stores the current directory opened in vifm
+  if [ -z "$cwd" ]; then
+    echo 'Directory switching failed.'
+    return 1
+  fi
+  
+  cd "$cwd"
+}
+
 
 eval "$(starship init zsh)"

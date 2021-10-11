@@ -1,4 +1,8 @@
 autostart
+obs-studio
+guake
+mimeapps.list
+google-chrome
 totem
 libreoffice
 coc
