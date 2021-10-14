@@ -18,6 +18,11 @@ imap jj <Esc>
 autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python3.9' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3.9' shellescape(@%, 1)<CR>
 
+" Neovim fast buffer switching
+nnoremap <leader>b :ls<CR>:b<Space>
+nnoremap <C-l> :bn<CR>
+nnoremap <C-h> :bp<CR>
+
 "vim-smoothie keymaps
 nmap <C-k> <C-u>k
 nmap <C-j> <C-d>j
@@ -32,8 +37,10 @@ if exists('g:vscode')
 else
 	"Gruvbox configs
 	colorscheme gruvbox
-	" Airline Theme
+	" Airline Theme & config
 	let g:airline_theme='deus'
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#formatter = 'default'
 endif
 
 
@@ -128,6 +135,7 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-
+" Rainbow Parenthesis
+let g:rainbow_active = 1
 
 

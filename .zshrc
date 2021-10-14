@@ -56,6 +56,8 @@ alias plugins.vim="nvim ~/.config/nvim/plugged/plugins.vim"
 alias szshrc="source ~/.zshrc"
 alias c="clear"
 alias rg="ranger"
+alias fzfn='nvim $(fzf)' #Must use single quotes.
+alias glog="git log --all --decorate --oneline --graph"
 
 # Antigen Plugins
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -66,6 +68,8 @@ antigen apply
 export STARSHIP_CONFIG=~/.config/starship/config.toml
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export EDITOR=nvim
+export FZF_DEFAULT_OPTS='--height 40% --border'
+
 
 # Functions
 function cheat {

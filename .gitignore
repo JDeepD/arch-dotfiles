@@ -1,4 +1,6 @@
 .cache
+.netrc
+.yarnrc
 .tldr
 .stellarium
 .python_history
