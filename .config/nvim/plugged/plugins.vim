@@ -47,7 +47,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+    Plug 'nvim-treesitter/nvim-treesitter-refactor'
 
+    " Startup time
+    Plug 'dstein64/vim-startuptime'
 
 
 
