@@ -25,16 +25,16 @@ if [ $bool == "Y" ] || [ $bool == "y" ]; then
 	echo
 	echo "Creating directories and copying files..."
 	echo
-	mkdir -p config/{nvim/plugged,starship}
-	cp -v arch-dotfiles/.config/nvim/init.vim config/nvim/init.vim
-	cp -v arch-dotfiles/.config/nvim/plugged/plugins.vim config/nvim/plugged/plugins.vim
-	cp -v arch-dotfiles/.config/starship/config.toml config/starship/config.toml
-	cp -v arch-dotfiles/.zshrc .zshrc
-	cp -v arch-dotfiles/.vimrc .vimrc
-	cp -r arch-dotfiles/.fonts . 
-	cp -R arch-dotfiles/.vim .
-	cp -R arch-dotfiles/antigen .
-	cp -R arch-dotfiles/.wallpaper .
+	mkdir -p ~/.config/{nvim/plugged,starship}
+	cp -v arch-dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
+	cp -v arch-dotfiles/.config/nvim/plugged/plugins.vim ~/.config/nvim/plugged/plugins.vim
+	cp -v arch-dotfiles/.config/starship/config.toml ~/.config/starship/config.toml
+	cp -v arch-dotfiles/.zshrc ~/.zshrc
+	cp -v arch-dotfiles/.vimrc ~/.vimrc
+	cp -r arch-dotfiles/.fonts ~ 
+	cp -R arch-dotfiles/.vim ~
+	cp -R arch-dotfiles/antigen ~
+	cp -R arch-dotfiles/.wallpaper ~
 
 	echo "==============================================================================================="
 	echo
@@ -72,5 +72,3 @@ else
 	echo "Exiting..."
 	exit 1
 fi
-
-
