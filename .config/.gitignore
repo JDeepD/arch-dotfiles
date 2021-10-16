@@ -1,4 +1,6 @@
 autostart
+VirtualBox
+QtProject.conf
 vifm/vifminfo.json
 vifm/vifm-help.txt
 obs-studio

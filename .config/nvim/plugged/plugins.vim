@@ -23,6 +23,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     "Smooth vertical scrolls
     Plug 'psliwka/vim-smoothie'
+    Plug 'karb94/neoscroll.nvim'
 
     "rainbow braces
     Plug 'luochen1990/rainbow'

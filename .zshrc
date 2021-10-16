@@ -86,5 +86,4 @@ function vicd {
   cd "$cwd"
 }
 
-
 eval "$(starship init zsh)"
