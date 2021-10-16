@@ -14,7 +14,8 @@
 .mozilla
 .themes
 Desktop
-install
+install/*
+!install/install.sh
 zsh-cache
 Documents
 Downloads
