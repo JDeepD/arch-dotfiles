@@ -40,9 +40,15 @@ if [ $bool == "Y" ] || [ $bool == "y" ]; then
 	echo
 	printf "Do you have your github ssh keys in .ssh? [Y/N] "; read answer
 	if [ $answer == "Y" ] || [ $answer == "y" ]; then
-		echo "Runnning ssh-agent"
-		eval "$(ssh-agent -s)"
 		printf "Enter a branch name for upstream: "; read branch
+		printf "Enter the private ssh key[file name] authenticated with github : " ; read key
+		if [ -z $key ] || [ -e "~/.ssh/$key" ]; then
+			echo "Invalid key/Key does not exist in ~/.ssh"
+			exit 1
+		fi
+		echo "Running ssh agent..."
+		eval "$(ssh-agent -s)"
+		ssh-add ~/.ssh/$key
 		git init
 		git add .
 		git commit -m "First commit"
