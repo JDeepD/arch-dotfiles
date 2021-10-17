@@ -1,4 +1,5 @@
 .cache
+VirtualBox VMs
 .netrc
 .yarnrc
 .tldr

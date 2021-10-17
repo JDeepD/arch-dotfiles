@@ -60,15 +60,16 @@ alias fzfn='nvim $(fzf)' #Must use single quotes.
 alias glog="git log --all --decorate --oneline --graph"
 
 # Antigen Plugins
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-antigen apply
+antigen bundle zsh-users/zsh-syntax-highlighting >/dev/null
+antigen bundle zsh-users/zsh-autosuggestions >/dev/null
+antigen apply >/dev/null
 
 # Environment variables
 export STARSHIP_CONFIG=~/.config/starship/config.toml
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export EDITOR=nvim
 export FZF_DEFAULT_OPTS='--height 40% --border'
+export GPG_TTY=$(tty)
 
 
 # Functions
