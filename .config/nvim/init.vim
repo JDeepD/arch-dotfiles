@@ -48,6 +48,8 @@ else
   let g:airline#extensions#tabline#formatter = 'default'
 endif
 
+" vim-bookmark setting
+let g:bookmark_auto_save_file = "~/.cache/vim-bookmarks/.vim-bookmarks"
 
 " Coc.nvim config
 " Always show the signcolumn, otherwise it would shift the text each time
