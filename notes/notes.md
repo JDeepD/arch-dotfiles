@@ -40,3 +40,24 @@ mode to bookmark that point with the id as `<character>`. To list all bookmarks,
 `'<character>`(tick character) can be used.
 Also use the plugin [vim-bookmarks](https://github.com/MattesGroeger/vim-bookmarks) for better bookmark switching.
 See [usage](https://github.com/MattesGroeger/vim-bookmarks/blob/master/README.md#usage)
+
+## Use surround.vim for super fast editing
+Keys:
+y(yank); s(surround); i(in); w(word); d(delete); c(change); t(tag); a(around);
+
+##### Examples
+Hello --`ysiw"` (yank surround in word with ")---> "Hello"
+Hello --`ysiw*` (yank surround in word with *)---> *Hello*
+"hello world" --`cs")` change surround " with ) -------> (hello world)
+"hello world" --`cs"<q>` change surround " with <q> tag --> <q>hello world</q>
+<q>hello world</q> --`cst"` change surround tag --> "hello world"
+"hello world" --`ds"` delete surround " ----------> hello world
+
+Multiple words surround(using Visual mode)
+
+Go in visual mode and select the words which you want to surround.
+Then use `S<surround character>` to surround the words with that character.
+
+Lorem Ipsum is simply dummy text of the printing 
+
+With cursor on L, `ys2aw"` (yank surround 2 around words with ") => "Lorem Ipsum" is simply dummy text of the printing 
