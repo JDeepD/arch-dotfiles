@@ -1,5 +1,6 @@
 .cache
-VirtualBox VMs
+.nvidia-settings-rc
+.vim-bookmarks
 .netrc
 .yarnrc
 .tldr
@@ -15,6 +16,7 @@ VirtualBox VMs
 .mozilla
 .themes
 Desktop
+VirtualBox VMs
 install/*
 !install/install.sh
 zsh-cache

@@ -3,6 +3,7 @@ source $HOME/.config/nvim/plugged/plugins.vim
 " Basic configs
 set encoding=utf-8
 set hidden
+set timeoutlen=500
 set termguicolors
 set cmdheight=2
 set updatetime=300
@@ -22,6 +23,9 @@ autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3.9' shelles
 nnoremap <leader>b :ls<CR>:b<Space>
 nnoremap <C-l> :bn<CR>
 nnoremap <C-h> :bp<CR>
+
+" Nvim which key config
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 
 "vim-smoothie keymaps
 nmap <C-k> <C-u>k
@@ -48,8 +52,6 @@ else
   let g:airline#extensions#tabline#formatter = 'default'
 endif
 
-" vim-bookmark setting
-let g:bookmark_auto_save_file = "~/.cache/vim-bookmarks/.vim-bookmarks"
 
 " Coc.nvim config
 " Always show the signcolumn, otherwise it would shift the text each time
