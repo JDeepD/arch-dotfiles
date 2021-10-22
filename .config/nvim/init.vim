@@ -48,7 +48,7 @@ else
 	colorscheme gruvbox
 	" Airline Theme & config
 	let g:airline_theme='deus'
-  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#enabled = 0 "Not required since bufferline is working
   let g:airline#extensions#tabline#formatter = 'default'
 endif
 
@@ -169,4 +169,12 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
  
+" Bufferline config
+lua << EOF
+require("bufferline").setup{
+  options = {
+    separator_style = "padded_slant"
+  }
+}
+EOF
 

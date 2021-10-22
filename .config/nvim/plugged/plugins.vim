@@ -64,8 +64,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Which key for cheat
     Plug 'liuchengxu/vim-which-key'
 
+    " Buffer line for sexy buffers
+    Plug 'kyazdani42/nvim-web-devicons' 
+    Plug 'akinsho/bufferline.nvim'
 
-
+    " An illegal plugin
+    Plug 'tpope/vim-fugitive'
 
 
     call plug#end()
