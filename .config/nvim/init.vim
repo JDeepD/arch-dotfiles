@@ -19,6 +19,11 @@ imap jj <Esc>
 autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python3.9' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3.9' shellescape(@%, 1)<CR>
 
+"Useful for adding annoying `;` in C/Cpp files
+" Just <Space>; in Normal mode to add `;` to end of line
+nnoremap <leader>; mz$a;<Esc>`z
+
+
 " Neovim fast buffer switching
 nnoremap <leader>b :ls<CR>:b<Space>
 nnoremap <C-l> :bn<CR>
