@@ -18,10 +18,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-surround'
 
     "Vim status bar
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    "Plug 'vim-airline/vim-airline'
+    "Plug 'vim-airline/vim-airline-themes'
+    Plug 'nvim-lualine/lualine.nvim'
 
-    "Gruvbox Theme
+    "Theme
+    Plug 'ayu-theme/ayu-vim'
     Plug 'gruvbox-community/gruvbox'
 
     "Smooth vertical scrolls

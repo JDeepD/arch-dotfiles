@@ -45,11 +45,9 @@ if exists('g:vscode')
 	imap jj <Esc>
 else
 	"Gruvbox configs
-	colorscheme gruvbox
-	" Airline Theme & config
-	let g:airline_theme='deus'
-  let g:airline#extensions#tabline#enabled = 0 "Not required since bufferline is working
-  let g:airline#extensions#tabline#formatter = 'default'
+	" colorscheme gruvbox
+  let ayu_color="dark"
+  colorscheme ayu
 endif
 
 
@@ -124,12 +122,6 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
 endif
 
 
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-
 " NERDTree config 
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <C-n> :NERDTree<CR>
@@ -178,3 +170,11 @@ require("bufferline").setup{
 }
 EOF
 
+" Lualine config
+lua << END
+  require'lualine'.setup{
+    options = {
+      theme = 'powerline_dark'
+  }
+}
+END
