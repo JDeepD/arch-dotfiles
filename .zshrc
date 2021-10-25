@@ -73,7 +73,8 @@ export FZF_DEFAULT_OPTS='--height 40% --border'
 export GPG_TTY=$(tty)
 # Export paths
 pip_bin="/home/jdeep/.local/bin"
-export PATH="$PATH:${pip_bin}"
+rofi_bin="/home/jdeep/.config/rofi/bin"
+export PATH="$PATH:${pip_bin}:${rofi_bin}"
 
 
 # Functions
