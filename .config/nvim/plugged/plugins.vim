@@ -73,5 +73,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " An illegal plugin
     Plug 'tpope/vim-fugitive'
 
+    " Indent lines
+    Plug 'Yggdroot/indentLine'
+
 
     call plug#end()

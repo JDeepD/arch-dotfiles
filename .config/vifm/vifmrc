@@ -238,6 +238,11 @@ filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
 fileviewer {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
          \ identify %f
 
+fileviewer {*.jpg,*.jpeg,*.png}
+           \ vifmimg draw %px %py %pw %ph %c
+           \ %pc
+           \ vifmimg clear
+
 " OpenRaster
 filextype *.ora
         \ {Edit in MyPaint}

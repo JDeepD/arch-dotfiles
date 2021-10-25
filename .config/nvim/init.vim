@@ -23,6 +23,13 @@ autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3.9' shelles
 " Just <Space>; in Normal mode to add `;` to end of line
 nnoremap <leader>; mz$a;<Esc>`z
 
+" Quick navs in Nvim terminal
+nnoremap <leader>w <C-w>
+tnoremap <leader>c <C-\><C-n>
+tnoremap <leader>w <C-\><C-n><C-w>
+tnoremap <C-h> <C-\><C-n>:bp<CR>
+tnoremap <C-l> <C-\><C-n>:bn<CR>
+
 
 " Neovim fast buffer switching
 nnoremap <leader>b :ls<CR>:b<Space>
@@ -180,6 +187,18 @@ lua << END
   require'lualine'.setup{
     options = {
       theme = 'powerline_dark'
-  }
+  },
+    sections = {
+      lualine_c = {'g:coc_status', 
+                  'filename'}
+  },
 }
 END
+
+" Indentline config
+let g:indentLine_setColors = 0
+
+
+
+
+
