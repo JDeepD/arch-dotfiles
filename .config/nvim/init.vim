@@ -3,6 +3,7 @@ source $HOME/.config/nvim/plugged/plugins.vim
 " Basic configs
 set encoding=utf-8
 set hidden
+highlight Comment cterm=italic
 set timeoutlen=500
 set termguicolors
 set cmdheight=2
