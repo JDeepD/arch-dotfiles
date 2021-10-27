@@ -77,4 +77,4 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'Yggdroot/indentLine'
 
 
-    call plug#end()
+call plug#end()

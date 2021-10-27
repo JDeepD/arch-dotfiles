@@ -1,4 +1,6 @@
 .cache
+.icons
+.var
 .gitkraken
 .nvidia-settings-rc
 .vim-bookmarks
