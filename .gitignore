@@ -19,6 +19,7 @@
 .mozilla
 .themes
 Desktop
+library
 VirtualBox VMs
 install/*
 !install/install.sh
