@@ -1,4 +1,16 @@
 .cache
+.config/Gaijin/
+.config/WarThunder/
+.config/cef_user_data/
+.config/gtk-2.0/
+.config/lutris/
+.config/wireshark/
+.pulse-cookie
+.steam/
+.steampath
+.steampid
+.wallpaper/DarkPlanet.png
+.wget-hsts
 .icons
 .var
 .gitkraken

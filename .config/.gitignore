@@ -1,4 +1,6 @@
 autostart
+gh
+GeoGebra
 menus
 calibre
 qBittorrent
@@ -38,6 +40,8 @@ procps
 pulse
 sxhkd
 dleyna-renderer-service.conf
+dleyna-server-service.conf
 user-dirs.dirs
 user-dirs.locale
+tiling-assistant
 
