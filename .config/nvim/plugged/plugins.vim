@@ -76,5 +76,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Indent lines
     Plug 'Yggdroot/indentLine'
 
+    " Toggle term
+    Plug 'akinsho/toggleterm.nvim'
+
+
+
 
 call plug#end()
