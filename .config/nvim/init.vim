@@ -152,7 +152,9 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 " Rainbow Parenthesis
 let g:rainbow_active = 1
 
+"Luaconfigs of plugins
 lua <<EOF
+-- Treesitter
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   ignore_install = {}, -- List of parsers to ignore installing
@@ -172,15 +174,16 @@ require'nvim-treesitter.configs'.setup {
     highlight_definitions = { enable = true },
   },
 }
-EOF
- 
-" Bufferline config
-lua << EOF
+
+-- Bufferline config
 require("bufferline").setup{
   options = {
     separator_style = "padded_slant"
   }
 }
+
+require("toggleterm").setup{}
+
 EOF
 
 " Lualine config
@@ -198,8 +201,3 @@ END
 
 " Indentline config
 let g:indentLine_setColors = 0
-
-
-
-
-

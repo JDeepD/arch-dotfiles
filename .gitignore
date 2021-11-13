@@ -1,4 +1,5 @@
 .cache
+.java
 .config/Gaijin/
 .config/WarThunder/
 .config/cef_user_data/
