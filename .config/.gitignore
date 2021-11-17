@@ -1,4 +1,6 @@
 autostart
+lazygit/state.yml
+Atom
 Electron
 JetBrains
 gh
@@ -46,4 +48,5 @@ dleyna-server-service.conf
 user-dirs.dirs
 user-dirs.locale
 tiling-assistant
-
+kdenliverc
+kdenlive-layoutsrc
