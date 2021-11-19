@@ -178,7 +178,7 @@ require'nvim-treesitter.configs'.setup {
 -- Bufferline config
 require("bufferline").setup{
   options = {
-    separator_style = "padded_slant"
+    separator_style = "slant"
   }
 }
 

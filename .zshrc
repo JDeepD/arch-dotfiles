@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 source ~/antigen/antigen.zsh
 
 # Lines configured by zsh-newuser-install
@@ -59,6 +66,8 @@ alias rg="ranger"
 alias fzfn='nvim $(fzf)' #Must use single quotes.
 alias glog="git log --all --decorate --oneline --graph"
 alias notes="nvim ~/notes/notes.md"
+alias alacritty.yml="nvim ~/.config/alacritty/alacritty.yml"
+alias btop="bpytop"
 
 # Antigen Plugins
 antigen bundle zsh-users/zsh-syntax-highlighting >/dev/null
@@ -92,4 +101,8 @@ function vicd {
   cd "$cwd"
 }
 
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
