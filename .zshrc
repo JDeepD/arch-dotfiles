@@ -68,6 +68,8 @@ alias glog="git log --all --decorate --oneline --graph"
 alias notes="nvim ~/notes/notes.md"
 alias alacritty.yml="nvim ~/.config/alacritty/alacritty.yml"
 alias btop="bpytop"
+alias tmux.conf="nvim ~/.config/tmux/tmux.conf"
+alias vifm="vifmrun"
 
 # Antigen Plugins
 antigen bundle zsh-users/zsh-syntax-highlighting >/dev/null
@@ -80,10 +82,12 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 export EDITOR=nvim
 export FZF_DEFAULT_OPTS='--height 40% --border'
 export GPG_TTY=$(tty)
+export TERM=xterm-256color
 # Export paths
 pip_bin="/home/jdeep/.local/bin"
 rofi_bin="/home/jdeep/.config/rofi/bin"
-export PATH="$PATH:${pip_bin}:${rofi_bin}"
+vifm_bin="/home/jdeep/.config/vifm/scripts"
+export PATH="$PATH:${pip_bin}:${rofi_bin}:${vifm_bin}"
 
 
 # Functions
@@ -100,6 +104,7 @@ function vicd {
   
   cd "$cwd"
 }
+
 
 # eval "$(starship init zsh)"
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme

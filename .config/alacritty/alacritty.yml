@@ -31,3 +31,6 @@ colors:
 font:
   normal:
     family: "MesloLGS NF"
+
+window:
+  decorations: "none"
