@@ -90,6 +90,34 @@ vifm_bin="/home/jdeep/.config/vifm/scripts"
 export PATH="$PATH:${pip_bin}:${rofi_bin}:${vifm_bin}"
 
 
+function post-web {
+  local website="/home/jdeep/Desktop/website/"
+  local public="/home/jdeep/Desktop/website/public/"
+  echo "cd $website"
+  cd $website || exit 1 
+  echo "Building site..."
+  if hugo --ignoreCache --cleanDestinationDir; then
+    echo "Commiting and Pushing changes to website..."
+    echo
+    git add -A &> /dev/null
+    git commit -m "New post" &> /dev/null
+    git push origin main &> /dev/null
+
+    echo "cd $public"
+    cd $public || exit 1
+    git add -A &> /dev/null
+    git commit -m "New post" &> /dev/null
+    git push -f origin main &> /dev/null
+    echo "Done..."
+
+    echo "cd $website" || exit 1
+    cd $website || exit 1
+    exit 0
+  else
+    exit 1
+  fi
+}
+
 # Functions
 function cheat {
   curl "https://cheat.sh/$1"
@@ -102,7 +130,7 @@ function vicd {
     return 1
   fi
   
-  cd "$cwd"
+  cd "$cwd" || echo "Error cding $? "
 }
 
 

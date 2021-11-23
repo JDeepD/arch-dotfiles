@@ -2,6 +2,7 @@ source $HOME/.config/nvim/plugged/plugins.vim
 
 " Basic configs
 set encoding=utf-8
+
 set hidden
 highlight Comment cterm=italic
 set timeoutlen=500
@@ -20,6 +21,9 @@ imap jj <Esc>
 autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python3.9' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3.9' shellescape(@%, 1)<CR>
 
+" Disable conceal level in json and md files set by Indent line plugin
+let g:indentLine_fileTypeExclude = ['json', 'markdown']
+
 "Useful for adding annoying `;` in C/Cpp files
 " Just <Space>; in Normal mode to add `;` to end of line
 nnoremap <leader>; mz$a;<Esc>`z
@@ -36,6 +40,9 @@ tnoremap <C-l> <C-\><C-n>:bn<CR>
 nnoremap <leader>b :ls<CR>:b<Space>
 nnoremap <C-l> :bn<CR>
 nnoremap <C-h> :bp<CR>
+
+" Hugo shortcode template
+nnoremap <leader>t i{{< highlight lang >}}<Esc>mza{{< /highlight >}}<Esc>`za
 
 " Nvim which key config
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
