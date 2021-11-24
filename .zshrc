@@ -94,7 +94,7 @@ function post-web {
   local website="/home/jdeep/Desktop/website/"
   local public="/home/jdeep/Desktop/website/public/"
   echo "cd $website"
-  cd $website || exit 1 
+  cd $website || return 1 
   echo "Building site..."
   if hugo --ignoreCache --cleanDestinationDir; then
     echo "Commiting and Pushing changes to website..."
@@ -104,17 +104,17 @@ function post-web {
     git push origin main &> /dev/null
 
     echo "cd $public"
-    cd $public || exit 1
+    cd $public || return 1
     git add -A &> /dev/null
     git commit -m "New post" &> /dev/null
     git push -f origin main &> /dev/null
     echo "Done..."
 
-    echo "cd $website" || exit 1
-    cd $website || exit 1
-    exit 0
+    echo "cd $website" || return 1
+    cd $website || return 1
+    return 0
   else
-    exit 1
+    return 1
   fi
 }
 
@@ -124,15 +124,27 @@ function cheat {
 }
 
 function vicd {
-  local cwd="$(command vifm --choose-dir - "$@")" # cwd stores the current directory opened in vifm
+  local cwd="$(command vifmrun --choose-dir - "$@")" # cwd stores the current directory opened in vifm
   if [ -z "$cwd" ]; then
     echo 'Directory switching failed.'
     return 1
   fi
   
-  cd "$cwd" || echo "Error cding $? "
+  cd "$cwd" || return 1
 }
 
+function man() {
+	env \
+		LESS_TERMCAP_md=$(tput bold; tput setaf 4) \
+		LESS_TERMCAP_me=$(tput sgr0) \
+		LESS_TERMCAP_mb=$(tput blink) \
+		LESS_TERMCAP_us=$(tput setaf 2) \
+		LESS_TERMCAP_ue=$(tput sgr0) \
+		LESS_TERMCAP_so=$(tput smso) \
+		LESS_TERMCAP_se=$(tput rmso) \
+		PAGER="${commands[less]:-$PAGER}" \
+		man "$@"
+}
 
 # eval "$(starship init zsh)"
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
