@@ -123,14 +123,8 @@ function cheat {
   curl "https://cheat.sh/$1"
 }
 
-function vicd {
-  local cwd="$(command vifmrun --choose-dir - "$@")" # cwd stores the current directory opened in vifm
-  if [ -z "$cwd" ]; then
-    echo 'Directory switching failed.'
-    return 1
-  fi
-  
-  cd "$cwd" || return 1
+function fvim() {
+  nvim $(fzf)
 }
 
 function man() {
@@ -144,6 +138,10 @@ function man() {
 		LESS_TERMCAP_se=$(tput rmso) \
 		PAGER="${commands[less]:-$PAGER}" \
 		man "$@"
+}
+
+function fcd() {
+  cd "$(find -type d | fzf)"
 }
 
 # eval "$(starship init zsh)"
