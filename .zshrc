@@ -70,6 +70,8 @@ alias alacritty.yml="nvim ~/.config/alacritty/alacritty.yml"
 alias btop="bpytop"
 alias tmux.conf="nvim ~/.config/tmux/tmux.conf"
 alias vifm="vifmrun"
+alias ls="ls --color=auto"
+alias ip="ip -c" # -c -> --color
 
 # Antigen Plugins
 antigen bundle zsh-users/zsh-syntax-highlighting >/dev/null

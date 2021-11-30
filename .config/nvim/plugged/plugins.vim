@@ -79,6 +79,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Toggle term
     Plug 'akinsho/toggleterm.nvim'
 
+    " Markdown preview
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 
 
