@@ -57,3 +57,6 @@ yay
 .config/Code*-*OSS/
 tmux*
 Projects
+aoc
+mypy
+.vimspector.log

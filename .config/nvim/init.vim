@@ -1,9 +1,12 @@
 source $HOME/.config/nvim/plugged/plugins.vim
+source $HOME/.config/nvim/cp.vim
 
 " Basic configs
 set encoding=utf-8
 
 set hidden
+set tabstop=4
+set cursorline
 highlight Comment cterm=italic
 set timeoutlen=500
 set termguicolors
