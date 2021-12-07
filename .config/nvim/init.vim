@@ -27,6 +27,10 @@ autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3.9' shelles
 " Disable conceal level in json and md files set by Indent line plugin
 let g:indentLine_fileTypeExclude = ['json', 'markdown']
 
+" Disable python2 support
+let g:loaded_python_provider = 0
+
+let g:python3_host_prog = '/usr/bin/python3'
 "Useful for adding annoying `;` in C/Cpp files
 " Just <Space>; in Normal mode to add `;` to end of line
 nnoremap <leader>; mz$a;<Esc>`z
@@ -166,7 +170,7 @@ let g:rainbow_active = 1
 lua <<EOF
 -- Treesitter
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+ensure_installed = {"python", "c", "cpp", "vim", "json", "yaml", "go", "html"}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   ignore_install = {}, -- List of parsers to ignore installing
   highlight = {
     enable = true,              -- false will disable the whole extension
