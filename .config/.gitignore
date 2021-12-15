@@ -1,4 +1,8 @@
 autostart
+chromium
+google-chrome-beta/
+google-chrome-unstable/
+evince
 bpytop
 lazygit/state.yml
 Atom
