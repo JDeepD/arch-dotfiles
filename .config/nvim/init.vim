@@ -6,6 +6,7 @@ set encoding=utf-8
 
 set hidden
 set tabstop=4
+autocmd FileType c setlocal cindent
 set cursorline
 highlight Comment cterm=italic
 set timeoutlen=500
@@ -21,8 +22,8 @@ set number relativenumber
 let mapleader = " "
 syntax on
 imap jj <Esc>
-autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python3.9' shellescape(@%, 1)<CR>
-autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3.9' shellescape(@%, 1)<CR>
+autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python' shellescape(@%, 1)<CR>
 
 " Disable conceal level in json and md files set by Indent line plugin
 let g:indentLine_fileTypeExclude = ['json', 'markdown']
@@ -30,7 +31,6 @@ let g:indentLine_fileTypeExclude = ['json', 'markdown']
 " Disable python2 support
 let g:loaded_python_provider = 0
 
-let g:python3_host_prog = '/usr/bin/python3'
 "Useful for adding annoying `;` in C/Cpp files
 " Just <Space>; in Normal mode to add `;` to end of line
 nnoremap <leader>; mz$a;<Esc>`z
@@ -41,6 +41,7 @@ tnoremap <leader>c <C-\><C-n>
 tnoremap <leader>w <C-\><C-n><C-w>
 tnoremap <C-h> <C-\><C-n>:bp<CR>
 tnoremap <C-l> <C-\><C-n>:bn<CR>
+nnoremap <leader>i :CocFix<CR>
 
 
 " Neovim fast buffer switching

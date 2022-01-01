@@ -50,6 +50,7 @@
 .zcompdump
 Desktop/
 Downloads/
+Documents/
 Games/
 Pictures/
 Projects/
@@ -60,3 +61,12 @@ tmux*
 yay/
 zsh-cache/
 .kodi
+classnotes
+.joplin
+Orchis-theme
+.config/Joplin
+.config/configstore
+.config/joplin-desktop
+.config/libvirt
+.config/python_keyring
+.node-gyp/

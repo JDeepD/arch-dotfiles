@@ -25,4 +25,3 @@ endfunction
 command! -nargs=0 CompileAndRun call TermWrapper(printf('g++ -std=c++11 %s && ./a.out', expand('%')))
 command! -nargs=1 -complete=file CompileAndRunWithFile call TermWrapper(printf('g++ -std=c++11 %s && ./a.out < %s', expand('%'), <q-args>))
 autocmd FileType cpp nnoremap <F5> :w<CR>:CompileAndRun<CR>
-

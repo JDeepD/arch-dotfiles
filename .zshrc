@@ -82,7 +82,7 @@ antigen apply >/dev/null
 export STARSHIP_CONFIG=~/.config/starship/config.toml
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export EDITOR=nvim
-export FZF_DEFAULT_OPTS='--height 40% --border'
+export FZF_DEFAULT_OPTS='--height 40%'
 export GPG_TTY=$(tty)
 export TERM=xterm-256color
 # Export paths
@@ -93,6 +93,7 @@ export PATH="$PATH:${pip_bin}:${rofi_bin}:${vifm_bin}"
 
 
 function post-web {
+  local commit="$1"
   local website="/home/jdeep/Desktop/website/"
   local public="/home/jdeep/Desktop/website/public/"
   echo "cd $website"
@@ -126,7 +127,7 @@ function cheat {
 }
 
 function fvim() {
-  nvim $(fzf)
+  nvim "$(find /home/jdeep -type f | fzf)"
 }
 
 function man() {
@@ -143,7 +144,7 @@ function man() {
 }
 
 function fcd() {
-  cd "$(find -type d | fzf)"
+  cd "$(find /home/jdeep/ -type d | fzf)"
 }
 
 # eval "$(starship init zsh)"

@@ -84,6 +84,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     "Graphical debugger
     Plug 'puremourning/vimspector'
+    
+    "Move blocks of text
+    Plug 'matze/vim-move'
 
 
 call plug#end()
