@@ -71,3 +71,4 @@ Orchis-theme
 .config/python_keyring
 .node-gyp/
 .config/nvim/coc-settings.json
+.sh_history
