@@ -1,11 +1,14 @@
 .antigen/
 .ssr/
+ssr*
+.node*
 .atom/
 .bash_history
 .cache/
 .calibre-web/
 .config/Code - OSS/
 .config/Gaijin/
+.config/discord/
 .config/WarThunder/
 .config/aocd/
 .config/background

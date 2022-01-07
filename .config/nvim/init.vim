@@ -5,8 +5,7 @@ source $HOME/.config/nvim/cp.vim
 set encoding=utf-8
 
 set hidden
-set tabstop=4
-autocmd FileType c setlocal cindent
+set ts=4 sw=4
 set cursorline
 highlight Comment cterm=italic
 set timeoutlen=500

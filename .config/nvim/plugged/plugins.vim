@@ -88,5 +88,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     "Move blocks of text
     Plug 'matze/vim-move'
 
+	"Discord presence
+	Plug 'andweeb/presence.nvim'
 
 call plug#end()

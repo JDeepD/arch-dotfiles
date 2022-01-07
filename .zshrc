@@ -62,7 +62,6 @@ alias init.vim="nvim ~/.config/nvim/init.vim"
 alias plugins.vim="nvim ~/.config/nvim/plugged/plugins.vim"
 alias szshrc="source ~/.zshrc"
 alias c="clear"
-alias rg="ranger"
 alias fzfn='nvim $(fzf)' #Must use single quotes.
 alias glog="git log --all --decorate --oneline --graph"
 alias notes="nvim ~/notes/notes.md"
