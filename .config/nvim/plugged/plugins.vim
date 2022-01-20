@@ -76,15 +76,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Indent lines
     Plug 'Yggdroot/indentLine'
 
-    " Toggle term
-    Plug 'akinsho/toggleterm.nvim'
-
     " Markdown preview
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
-    "Graphical debugger
-    Plug 'puremourning/vimspector'
-    
     "Move blocks of text
     Plug 'matze/vim-move'
 

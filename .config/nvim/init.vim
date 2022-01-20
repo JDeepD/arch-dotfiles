@@ -196,8 +196,6 @@ require("bufferline").setup{
   }
 }
 
-require("toggleterm").setup{}
-
 EOF
 
 " Lualine config

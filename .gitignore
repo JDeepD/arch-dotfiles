@@ -1,4 +1,17 @@
 .antigen/
+.profile
+.cargo/
+.config/lsp-plugins
+.config/weechat
+.zshenv
+share/
+bin/
+.rustup/
+mat*
+ani-cli/
+libexec
+BN*
+ECE*
 .ssr/
 ssr*
 .node*
