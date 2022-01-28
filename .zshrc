@@ -158,12 +158,12 @@ yr() {
 
 fcd() {
   local dir
-  dir="$(find -type d | fzf --query="$*" --cycle --bind 'tab:down,btab:up' -1 -0 --no-sort)" && cd "${dir}" || return 1
+  dir="$(find -not -path '*/.*'  -type d | fzf --query="$*" --cycle --bind 'tab:down,btab:up' -1 -0 --no-sort)" && cd "${dir}" || return 1
 }
 
 fgd() {
   local dir
-  dir="$(find $HOME -type d | fzf --query="$*" --cycle --bind 'tab:down,btab:up' -1 -0 --no-sort)" && cd "${dir}" || return 1
+  dir="$(find $HOME -not -path '*/.*'  -type d | fzf --query="$*" --cycle --bind 'tab:down,btab:up' -1 -0 --no-sort)" && cd "${dir}" || return 1
 }
 
 
