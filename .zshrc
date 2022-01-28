@@ -69,9 +69,9 @@ alias notes="nvim ~/notes/notes.md"
 alias alacritty.yml="nvim ~/.config/alacritty/alacritty.yml"
 alias btop="bpytop"
 alias tmux.conf="nvim ~/.config/tmux/tmux.conf"
-alias vifm="vifmrun"
 alias ls="ls --color=auto"
 alias ip="ip -c" # -c -> --color
+alias la="(exa -ahl --color=always --group-directories-first ) | bat --paging never"
 
 # Antigen Plugins
 antigen bundle zsh-users/zsh-syntax-highlighting >/dev/null
@@ -88,8 +88,7 @@ export TERM=xterm-256color
 # Export paths
 pip_bin="/home/jdeep/.local/bin"
 rofi_bin="/home/jdeep/.config/rofi/bin"
-vifm_bin="/home/jdeep/.config/vifm/scripts"
-export PATH="$PATH:${pip_bin}:${rofi_bin}:${vifm_bin}"
+export PATH="$PATH:${pip_bin}:${rofi_bin}"
 
 
 function post-web {
@@ -127,7 +126,7 @@ function cheat {
 }
 
 function fvim() {
-  nvim "$(find /home/jdeep -type f | fzf)"
+  nvim "$(find $HOME -type f | fzf)"
 }
 
 function man() {
@@ -143,10 +142,32 @@ function man() {
 		man "$@"
 }
 
-function fcd() {
-  cd "$(find /home/jdeep/ -type d | fzf)"
+yi() {
+  SELECTED_PKGS="$(yay -Slq | fzf --header='Install packages' -m --height 100% --preview 'yay -Si {1}')"
+  if [ -n "$SELECTED_PKGS" ]; then
+    yay -S $(echo $SELECTED_PKGS)
+  fi
+}
+yr() {
+  SELECTED_PKGS="$(yay -Qsq | fzf --header='Remove packages' -m --height 100% --preview 'yay -Si {1}')"
+  if [ -n "$SELECTED_PKGS" ]; then
+    yay -Rns $(echo $SELECTED_PKGS)
+  fi
+}
+#deps fzf , yay
+
+fcd() {
+  local dir
+  dir="$(find -type d | fzf --query="$*" --cycle --bind 'tab:down,btab:up' -1 -0 --no-sort)" && cd "${dir}" || return 1
 }
 
+fgd() {
+  local dir
+  dir="$(find $HOME -type d | fzf --query="$*" --cycle --bind 'tab:down,btab:up' -1 -0 --no-sort)" && cd "${dir}" || return 1
+}
+
+
+eval "$(zoxide init zsh)" # Enable zoxide
 # eval "$(starship init zsh)"
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 

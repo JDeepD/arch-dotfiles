@@ -63,20 +63,15 @@ set clipboard+=unnamedplus
 "Copy everything to system buffer
 nnoremap YY gg"+yG
 
+"Set colorscheme
+let ayu_color="dark"
+colorscheme ayu
 
-" Vscode Neovim config
-if exists('g:vscode')
-	set nu! 
-	set rnu!
-	syntax off
-	imap jj <Esc>
-else
-	"Gruvbox configs
-	" colorscheme gruvbox
-  let ayu_color="dark"
-  colorscheme ayu
+if has("unix")
+	nnoremap ,cpp :-1read ${HOME}/.config/nvim/templates/cptemplate.cpp<CR>
+	nnoremap ,c1 :-1read ${HOME}/.config/nvim/templates/c1.c<CR>
+	nnoremap ,c2 :-1read ${HOME}/.config/nvim/templates/c2.c<CR>
 endif
-
 
 " Coc.nvim config
 " Always show the signcolumn, otherwise it would shift the text each time

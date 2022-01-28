@@ -22,6 +22,11 @@ function! TermWrapper(command) abort
 endfunction
 
 
-command! -nargs=0 CompileAndRun call TermWrapper(printf('g++ -std=c++11 %s && ./a.out', expand('%')))
-command! -nargs=1 -complete=file CompileAndRunWithFile call TermWrapper(printf('g++ -std=c++11 %s && ./a.out < %s', expand('%'), <q-args>))
+command! -nargs=0 CompileAndRun call TermWrapper(printf('g++ -std=c++17 %s && ./a.out', expand('%')))
+command! -nargs=0 CompileAndRunC call TermWrapper(printf('gcc -std=c17 %s && ./a.out', expand('%')))
+
+command! -nargs=1 -complete=file CompileAndRunWithFile call TermWrapper(printf('g++ -std=c++17 %s && ./a.out < %s', expand('%'), <q-args>))
+
 autocmd FileType cpp nnoremap <F5> :w<CR>:CompileAndRun<CR>
+autocmd FileType c nnoremap <F5> :w<CR>:CompileAndRunC<CR>
+
