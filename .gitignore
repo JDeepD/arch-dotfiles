@@ -1,6 +1,7 @@
 .antigen/
 .profile
 .cargo/
+.tmux/
 .config/lsp-plugins
 .config/weechat
 .zshenv
@@ -31,7 +32,6 @@ ssr*
 .config/gtk-2.0/
 .config/inkscape/
 .config/lutris/
-.config/tmux/
 .config/wireshark/
 .gitkraken/
 .gnupg/
@@ -73,7 +73,6 @@ Projects/
 VirtualBox VMs/
 aoc/
 library/
-tmux*
 yay/
 zsh-cache/
 .kodi

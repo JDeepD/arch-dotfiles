@@ -9,7 +9,6 @@ set ts=4 sw=4
 set cursorline
 highlight Comment cterm=italic
 set timeoutlen=500
-set termguicolors
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
@@ -64,8 +63,6 @@ set clipboard+=unnamedplus
 nnoremap YY gg"+yG
 
 "Set colorscheme
-let ayu_color="dark"
-colorscheme ayu
 
 if has("unix")
 	nnoremap ,cpp :-1read ${HOME}/.config/nvim/templates/cptemplate.cpp<CR>
@@ -208,3 +205,6 @@ END
 
 " Indentline config
 let g:indentLine_setColors = 0
+
+set termguicolors
+let ayucolor="dark" | colorscheme ayu
