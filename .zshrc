@@ -153,13 +153,8 @@ yr() {
 } #deps fzf , yay
 
 fcd() {
-  local dir
-  dir="$(find -not -path '*/.*'  -type d | fzf --query="$*" --cycle --bind 'tab:down,btab:up' -1 -0 --no-sort)" && cd "${dir}" || return 1
-}
-
-fgd() {
-  local dir
-  dir="$(find $HOME -not -path '*/.*'  -type d | fzf --query="$*" --cycle --bind 'tab:down,btab:up' -1 -0 --no-sort)" && cd "${dir}" || return 1
+	local dir
+	dir="$(fd --type d --no-ignore --no-hidden | fzf --exact --preview="exa --tree {}" --prompt="cd > " --bind tab:preview-page-up,btab:preview-page-down -0)" && cd "${dir}" || return 1
 }
 
 function man() {
