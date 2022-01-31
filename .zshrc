@@ -157,19 +157,6 @@ fcd() {
 	dir="$(fd --type d --no-ignore --no-hidden | fzf --exact --preview="exa --tree {}" --prompt="cd > " --bind tab:preview-page-up,btab:preview-page-down -0)" && cd "${dir}" || return 1
 }
 
-function man() {
-	env \
-		LESS_TERMCAP_md=$(tput bold; tput setaf 4) \
-		LESS_TERMCAP_me=$(tput sgr0) \
-		LESS_TERMCAP_mb=$(tput blink) \
-		LESS_TERMCAP_us=$(tput setaf 2) \
-		LESS_TERMCAP_ue=$(tput sgr0) \
-		LESS_TERMCAP_so=$(tput smso) \
-		LESS_TERMCAP_se=$(tput rmso) \
-		PAGER="${commands[less]:-$PAGER}" \
-		man "$@"
-}
-
 eval "$(zoxide init zsh)" # Enable zoxide
 # eval "$(starship init zsh)"
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme

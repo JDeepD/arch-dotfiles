@@ -6,4 +6,7 @@ Required packages:
 2. vifm
 3. starship prompt
 4. zsh(set as default)
-
+5. fd
+6. exa
+7. bat
+8. p10kprompt
