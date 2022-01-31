@@ -1,4 +1,7 @@
 .antigen/
+.config/kconf*
+.config/kde*
+.config/monitors*
 .profile
 .cargo/
 .tmux/

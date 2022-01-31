@@ -5,6 +5,7 @@ source $HOME/.config/nvim/cp.vim
 set encoding=utf-8
 
 set hidden
+set mouse+=a
 set ts=4 sw=4
 set cursorline
 highlight Comment cterm=italic

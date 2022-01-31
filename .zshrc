@@ -52,7 +52,9 @@ zle-line-init() {
     zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
     echo -ne "\e[5 q"
 }
+
 zle -N zle-line-init
+
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
@@ -82,7 +84,7 @@ antigen apply >/dev/null
 export STARSHIP_CONFIG=~/.config/starship/config.toml
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export EDITOR=nvim
-export FZF_DEFAULT_OPTS='--height 40%'
+export FZF_DEFAULT_OPTS='--prompt=" " --height 40%'
 export GPG_TTY=$(tty)
 export TERM=xterm-256color
 # Export paths
@@ -125,8 +127,39 @@ function cheat {
   curl "https://cheat.sh/$1"
 }
 
-function fvim() {
-  nvim "$(find $HOME -type f | fzf)"
+fman() {
+    man -k . | fzf --exact -q "$1" --prompt='man> '  --preview $'echo {} | tr -d \'()\' | awk \'{printf "%s ", $2} {print $1}\' | xargs -r man | col -bx | bat -l man -p --color always' \
+        | tr -d '()' | awk '{printf "%s ", $2} {print $1}' | xargs -r man
+}
+# Get the colors in the opened man page itself
+export MANPAGER="sh -c 'col -bx | bat -l man -p --paging always'"
+
+
+fvim(){
+	loc=$(fzf --exact --preview="bat --color=always {}" --prompt="$EDITOR > " --bind K:preview-page-up,J:preview-page-down) && ${EDITOR:-vim} $loc
+}
+
+yi() {
+  SELECTED_PKGS="$(yay -Slq | fzf --header='Install packages' -m --height 100% --preview 'yay -Si {1}')"
+  if [ -n "$SELECTED_PKGS" ]; then
+    yay -S $(echo $SELECTED_PKGS)
+  fi
+}
+yr() {
+  SELECTED_PKGS="$(yay -Qsq | fzf --header='Remove packages' -m --height 100% --preview 'yay -Si {1}')"
+  if [ -n "$SELECTED_PKGS" ]; then
+    yay -Rns $(echo $SELECTED_PKGS)
+  fi
+} #deps fzf , yay
+
+fcd() {
+  local dir
+  dir="$(find -not -path '*/.*'  -type d | fzf --query="$*" --cycle --bind 'tab:down,btab:up' -1 -0 --no-sort)" && cd "${dir}" || return 1
+}
+
+fgd() {
+  local dir
+  dir="$(find $HOME -not -path '*/.*'  -type d | fzf --query="$*" --cycle --bind 'tab:down,btab:up' -1 -0 --no-sort)" && cd "${dir}" || return 1
 }
 
 function man() {
@@ -141,31 +174,6 @@ function man() {
 		PAGER="${commands[less]:-$PAGER}" \
 		man "$@"
 }
-
-yi() {
-  SELECTED_PKGS="$(yay -Slq | fzf --header='Install packages' -m --height 100% --preview 'yay -Si {1}')"
-  if [ -n "$SELECTED_PKGS" ]; then
-    yay -S $(echo $SELECTED_PKGS)
-  fi
-}
-yr() {
-  SELECTED_PKGS="$(yay -Qsq | fzf --header='Remove packages' -m --height 100% --preview 'yay -Si {1}')"
-  if [ -n "$SELECTED_PKGS" ]; then
-    yay -Rns $(echo $SELECTED_PKGS)
-  fi
-}
-#deps fzf , yay
-
-fcd() {
-  local dir
-  dir="$(find -not -path '*/.*'  -type d | fzf --query="$*" --cycle --bind 'tab:down,btab:up' -1 -0 --no-sort)" && cd "${dir}" || return 1
-}
-
-fgd() {
-  local dir
-  dir="$(find $HOME -not -path '*/.*'  -type d | fzf --query="$*" --cycle --bind 'tab:down,btab:up' -1 -0 --no-sort)" && cd "${dir}" || return 1
-}
-
 
 eval "$(zoxide init zsh)" # Enable zoxide
 # eval "$(starship init zsh)"
