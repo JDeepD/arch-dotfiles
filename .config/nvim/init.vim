@@ -41,6 +41,7 @@ tnoremap <leader>w <C-\><C-n><C-w>
 tnoremap <C-h> <C-\><C-n>:bp<CR>
 tnoremap <C-l> <C-\><C-n>:bn<CR>
 nnoremap <leader>i :CocFix<CR>
+nmap <leader>r :NERDTreeFocus<cr>R<c-w><c-p>
 
 
 " Neovim fast buffer switching
@@ -66,9 +67,9 @@ nnoremap YY gg"+yG
 "Set colorscheme
 
 if has("unix")
-	nnoremap ,cpp :-1read ${HOME}/.config/nvim/templates/cptemplate.cpp<CR>
-	nnoremap ,c1 :-1read ${HOME}/.config/nvim/templates/c1.c<CR>
-	nnoremap ,c2 :-1read ${HOME}/.config/nvim/templates/c2.c<CR>
+	nnoremap cpp :-1read ${HOME}/.config/nvim/templates/cptemplate.cpp<CR>
+	nnoremap c1 :-1read ${HOME}/.config/nvim/templates/c1.c<CR>
+	nnoremap c2 :-1read ${HOME}/.config/nvim/templates/c2.c<CR>
 endif
 
 " Coc.nvim config
@@ -185,7 +186,7 @@ require'nvim-treesitter.configs'.setup {
 -- Bufferline config
 require("bufferline").setup{
   options = {
-    separator_style = "slant"
+    separator_style = "thick"
   }
 }
 

@@ -73,7 +73,8 @@ alias btop="bpytop"
 alias tmux.conf="nvim ~/.config/tmux/tmux.conf"
 alias ls="ls --color=auto"
 alias ip="ip -c" # -c -> --color
-alias la="(exa -ahl --color=always --group-directories-first ) | bat --paging never"
+alias la="(exa -ahl --color=always --group-directories-first ) | bat --paging never --style=numbers"
+alias tree="exa -T"
 
 # Antigen Plugins
 antigen bundle zsh-users/zsh-syntax-highlighting >/dev/null
@@ -84,6 +85,7 @@ antigen apply >/dev/null
 export STARSHIP_CONFIG=~/.config/starship/config.toml
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export EDITOR=nvim
+export FZF_DEFAULT_COMMAND="fd --type file --follow --hidden -E .git -E node_modules -E .npm"
 export FZF_DEFAULT_OPTS='--prompt=" " --height 40%'
 export GPG_TTY=$(tty)
 export TERM=xterm-256color
@@ -124,20 +126,23 @@ function post-web {
 
 # Functions
 function cheat {
-  curl "https://cheat.sh/$1"
+  curl "https://cht.sh/$1"
 }
 
 fman() {
-    man -k . | fzf --exact -q "$1" --prompt='man> '  --preview $'echo {} | tr -d \'()\' | awk \'{printf "%s ", $2} {print $1}\' | xargs -r man | col -bx | bat -l man -p --color always' \
-        | tr -d '()' | awk '{printf "%s ", $2} {print $1}' | xargs -r man
+    	man -k . |
+		fzf --exact -q "$1" --prompt='man> '  --preview $'echo {} |
+		tr -d \'()\' |
+		awk \'{printf "%s ", $2} {print $1}\' |
+		xargs -r man |
+		col -bx |
+		bat -l man -p --color always'|
+		tr -d '()' | awk '{printf "%s ", $2} {print $1}' |
+		xargs -r man
 }
 # Get the colors in the opened man page itself
 export MANPAGER="sh -c 'col -bx | bat -l man -p --paging always'"
 
-
-fvim(){
-	loc=$(fzf --exact --preview="bat --color=always {}" --prompt="$EDITOR > " --bind K:preview-page-up,J:preview-page-down) && ${EDITOR:-vim} $loc
-}
 
 yi() {
   SELECTED_PKGS="$(yay -Slq | fzf --header='Install packages' -m --height 100% --preview 'yay -Si {1}')"
@@ -145,17 +150,36 @@ yi() {
     yay -S $(echo $SELECTED_PKGS)
   fi
 }
+
 yr() {
-  SELECTED_PKGS="$(yay -Qsq | fzf --header='Remove packages' -m --height 100% --preview 'yay -Si {1}')"
+  SELECTED_PKGS="$(yay -Qsq | fzf --exact --header='Remove packages' -m --height 100% --preview 'yay -Si {1}')"
   if [ -n "$SELECTED_PKGS" ]; then
     yay -Rns $(echo $SELECTED_PKGS)
   fi
-} #deps fzf , yay
+}
 
 fcd() {
 	local dir
-	dir="$(fd --type d --no-ignore --no-hidden | fzf --exact --preview="exa --tree {}" --prompt="cd > " --bind tab:preview-page-up,btab:preview-page-down -0)" && cd "${dir}" || return 1
+	dir="$(fd --type d --no-ignore --no-hidden |
+		fzf --exact --preview="exa --tree {}" --prompt="cd > " --bind tab:preview-page-up,btab:preview-page-down -0)" && 
+		cd "${dir}" || return 1
 }
+
+
+fvim(){
+	local fil
+	fil="$(fd --type f |
+		fzf --exact --preview="bat --color=always {}" --prompt="${EDITOR}> " --bind tab:preview-page-up,btab:preview-page-down -0)" && 
+		${EDITOR} "${fil}" || return 1
+}
+
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) |
+	  fzf +s --tac |
+	  sed -E 's/ *[0-9]*\*? *//' |
+	  sed -E 's/\\/\\\\/g')
+}
+
 
 eval "$(zoxide init zsh)" # Enable zoxide
 # eval "$(starship init zsh)"

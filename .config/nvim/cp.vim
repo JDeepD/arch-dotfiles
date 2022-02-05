@@ -29,4 +29,3 @@ command! -nargs=1 -complete=file CompileAndRunWithFile call TermWrapper(printf('
 
 autocmd FileType cpp nnoremap <F5> :w<CR>:CompileAndRun<CR>
 autocmd FileType c nnoremap <F5> :w<CR>:CompileAndRunC<CR>
-

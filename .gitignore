@@ -1,4 +1,5 @@
 .antigen/
+.config/kicad
 .config/kconf*
 .config/kde*
 .config/monitors*
