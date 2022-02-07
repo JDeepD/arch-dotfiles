@@ -1,7 +1,6 @@
 -- get vars
 HOME = os.getenv("HOME")
 
-
 -- macros
 function map(mode, shortcut, command, is_noremap)
   if (is_noremap == 0) then 
@@ -51,4 +50,5 @@ nmap("<C-h>", "<C-\><C-n>:bp<CR>")
 nmap("<C-l>", "<C-\><C-n>:bn<CR>")
 
 
-
+require('plugged/plugins')
+require('lua')
