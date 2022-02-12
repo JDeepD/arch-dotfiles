@@ -11,6 +11,7 @@ function! TermWrapper(command) abort
 		echoerr 'ERROR! g:split_term_style is not a valid value (must be ''horizontal'' or ''vertical'' but is currently set to ''' . g:split_term_style . ''')'
 		throw 'ERROR! g:split_term_style is not a valid value (must be ''horizontal'' or ''vertical'')'
 	endif
+
 	exec buffercmd
 	if exists('g:split_term_resize_cmd')
 		exec g:split_term_resize_cmd

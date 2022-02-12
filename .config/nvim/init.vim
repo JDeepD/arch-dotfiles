@@ -136,6 +136,7 @@ local npairs = require("nvim-autopairs")
 npairs.setup({
 	fast_wrap = {
 	  map = '<M-e>',
+	  map_cr=false,
 	  chars = { '{', '[', '(', '"', "'" },
 	  pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], '%s+', ''),
 	  offset = 0, -- Offset from pattern match
@@ -146,6 +147,21 @@ npairs.setup({
 	  highlight_grey='Comment'
 	},
 })
+
+local remap = vim.api.nvim_set_keymap
+
+-- skip it, if you use another global object
+_G.MUtils= {}
+
+MUtils.completion_confirm=function()
+  if vim.fn.pumvisible() ~= 0  then
+    return vim.fn["coc#_select_confirm"]()
+  else
+    return npairs.autopairs_cr()
+  end
+end
+
+remap('i' , '<CR>','v:lua.MUtils.completion_confirm()', {expr = true , noremap = true})
 
 
 EOF

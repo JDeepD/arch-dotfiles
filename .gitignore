@@ -1,5 +1,9 @@
 .antigen/
 Movies
+.config/systemd
+.sql*
+.python*
+.config/git
 .config/kicad
 .config/kconf*
 .config/kde*
