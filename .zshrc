@@ -5,8 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source ~/antigen/antigen.zsh
 source ~/.cargo/env
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/zsh-cache/.histfile
@@ -76,10 +77,6 @@ alias ip="ip -c" # -c -> --color
 alias la="(exa -ahl --color=always --group-directories-first ) | bat --paging never --style=numbers"
 alias tree="exa -T"
 
-# Antigen Plugins
-antigen bundle zsh-users/zsh-syntax-highlighting >/dev/null
-antigen bundle zsh-users/zsh-autosuggestions >/dev/null
-antigen apply >/dev/null
 
 # Environment variables
 export STARSHIP_CONFIG=~/.config/starship/config.toml
