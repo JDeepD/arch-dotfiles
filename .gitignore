@@ -1,5 +1,6 @@
 .antigen/
 Movies
+.octave*
 .config/systemd
 .sql*
 .python*
@@ -96,3 +97,4 @@ Orchis-theme
 .node-gyp/
 .config/nvim/coc-settings.json
 .sh_history
+node_modules

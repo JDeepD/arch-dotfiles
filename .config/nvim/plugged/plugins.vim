@@ -25,6 +25,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     "Theme
     Plug 'ayu-theme/ayu-vim'
     Plug 'gruvbox-community/gruvbox'
+	Plug 'EdenEast/nightfox.nvim'
+	Plug 'marko-cerovac/material.nvim'
+
 
     "Smooth vertical scrolls
     Plug 'psliwka/vim-smoothie'

@@ -70,7 +70,7 @@ nnoremap YY gg"+yG
 if has("unix")
 	nnoremap cpp :-1read ${HOME}/.config/nvim/templates/cptemplate.cpp<CR>
 	nnoremap c1 :-1read ${HOME}/.config/nvim/templates/c1.c<CR>
-	nnoremap c2 :-1read ${HOME}/.config/nvim/templates/c2.c<CR>
+	nnoremap c2 :-1read ${HOME}/.config/nvim/templates/c2.cpp<CR>
 endif
 
 " Coc.nvim config
@@ -170,7 +170,7 @@ EOF
 lua << END
   require'lualine'.setup{
     options = {
-      theme = 'powerline_dark'
+      theme = 'material'
   },
     sections = {
       lualine_c = {'g:coc_status', 
@@ -183,6 +183,7 @@ END
 let g:indentLine_setColors = 0
 
 set termguicolors
-let g:tokyonight_style = "night"
-let g:tokyonight_italic_functions = 1
-colorscheme tokyonight
+" let g:tokyonight_style = "night"
+" let g:tokyonight_italic_functions = 1
+let g:material_style = "deep ocean"
+colorscheme material
