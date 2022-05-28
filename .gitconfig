@@ -10,3 +10,10 @@
 	program = gpg2
 [push]
 	default = current
+[sendemail]
+	smtpserver = smtp.gmail.com
+	smtpserverport = 587
+	smtpencryption = tls
+	smtpuser = jaydeepjd.8914@gmail.com
+[commit]
+	gpgSign = true

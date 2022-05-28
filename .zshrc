@@ -108,6 +108,7 @@ function post-web {
 
     echo "cd $public"
     cd $public || return 1
+	echo jdeep.me > CNAME
     git add -A &> /dev/null
     git commit -m "New post" &> /dev/null
     git push -f origin main &> /dev/null

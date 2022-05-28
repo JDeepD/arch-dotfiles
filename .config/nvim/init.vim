@@ -6,6 +6,7 @@ source $HOME/.config/nvim/cocconf.vim
 set encoding=utf-8
 
 set hidden
+set scrolloff=6
 set mouse+=a
 set ts=4 sw=4
 set cursorline
