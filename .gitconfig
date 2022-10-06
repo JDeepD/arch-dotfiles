@@ -2,7 +2,7 @@
 	defaultBranch = main
 [user]
 	email = jaydeepjd.8914@gmail.com
-	name = Jaydeep P Das
+	name = Jaydeep Das
 	signingKey = 3E688D907E91971D
 [core]
 	editor = nvim
@@ -17,3 +17,13 @@
 	smtpuser = jaydeepjd.8914@gmail.com
 [commit]
 	gpgSign = true
+[credential]
+	helper = 
+	helper = /usr/local/bin/git-credential-manager-core
+	credentialStore = secretservice
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[http]
+	proxy = http://172.16.199.40:8080/
+[https]
+	proxy = http://172.16.199.40:8080/

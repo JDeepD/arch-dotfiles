@@ -15,3 +15,13 @@ fman() {
 }
 # Get the colors in the opened man page itself
 export MANPAGER="sh -c 'col -bx | bat -l man -p --paging always'"
+export http_proxy="http://172.16.199.40:8080/"
+export ftp_proxy="ftp://172.16.199.40:8080/"
+export rsync_proxy="rsync://172.16.199.40:8080/"
+export no_proxy="localhost,127.0.0.1,192.168.1.1,::1,*.local"
+export HTTP_PROXY="http://172.16.199.40:8080/"
+export FTP_PROXY="ftp://172.16.199.40:8080/"
+export RSYNC_PROXY="rsync://172.16.199.40:8080/"
+export NO_PROXY="localhost,127.0.0.1,192.168.1.1,::1,*.local"
+export https_proxy="http://172.16.199.40:8080/"
+export HTTPS_PROXY="http://172.16.199.40:8080/"

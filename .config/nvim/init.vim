@@ -43,6 +43,8 @@ tnoremap <leader>w <C-\><C-n><C-w>
 tnoremap <C-h> <C-\><C-n>:bp<CR>
 tnoremap <C-l> <C-\><C-n>:bn<CR>
 nnoremap <leader>i :CocFix<CR>
+nnoremap <leader>m :call CocAction('diagnosticNext')<CR>
+
 nmap <leader>r :NERDTreeFocus<cr>R<c-w><c-p>
 
 
@@ -69,7 +71,7 @@ nnoremap YY gg"+yG
 "Set colorscheme
 
 if has("unix")
-	nnoremap cpp :-1read ${HOME}/.config/nvim/templates/cptemplate.cpp<CR>
+	nnoremap cpp :-1read ${HOME}/.config/nvim/templates/template.cpp<CR>
 	nnoremap c1 :-1read ${HOME}/.config/nvim/templates/c1.c<CR>
 	nnoremap c2 :-1read ${HOME}/.config/nvim/templates/c2.cpp<CR>
 endif
@@ -184,7 +186,7 @@ END
 let g:indentLine_setColors = 0
 
 set termguicolors
-" let g:tokyonight_style = "night"
-" let g:tokyonight_italic_functions = 1
-let g:material_style = "deep ocean"
-colorscheme material
+let g:tokyonight_style = "night"
+let g:tokyonight_italic_functions = 1
+" let g:material_style = "deep ocean"
+colorscheme tokyonight

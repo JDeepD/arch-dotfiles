@@ -24,7 +24,7 @@ endfunction
 
 
 command! -nargs=0 CompileAndRunCpp call TermWrapper(printf("g++ -std=c++17 %s && ./a.out", expand('%')))
-command! -nargs=0 CompileAndRunC call TermWrapper(printf("gcc -std=c17 %s && ./a.out", expand('%')))
+command! -nargs=0 CompileAndRunC call TermWrapper(printf("gcc %s && ./a.out", expand('%')))
 command! -nargs=0 CompileAndRunRs call TermWrapper(printf("rustc %s -o a.out && ./a.out", expand('%')))
 
 command! -nargs=0 Runpython call TermWrapper(printf("time python %s", expand('%')))

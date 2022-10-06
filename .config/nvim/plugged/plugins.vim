@@ -61,7 +61,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'dstein64/vim-startuptime'
 
     " Vim-Bookmarks
-    Plug 'MattesGroeger/vim-bookmarks'
+    " Plug 'MattesGroeger/vim-bookmarks'
 
     " Startify
     Plug 'mhinz/vim-startify'

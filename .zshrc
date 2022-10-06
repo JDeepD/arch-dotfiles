@@ -77,6 +77,11 @@ alias la="(exa -ahl --color=always --group-directories-first ) | bat --paging ne
 alias tree="exa -T"
 alias matlab="matlab -desktop -nosoftwareopengl &> /dev/null"
 
+function uns() {
+	proxyman unset
+	unset {http,https,ftp,rsync,no}_proxy
+	unset {HTTP,HTTPS,FTP,RSYNC,NO}_PROXY
+}
 
 # Environment variables
 export STARSHIP_CONFIG=~/.config/starship/config.toml
@@ -207,3 +212,13 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # unset __conda_setup
 # # <<< conda initialize <<<
 
+export http_proxy="http://172.16.199.40:8080/"
+export ftp_proxy="ftp://172.16.199.40:8080/"
+export rsync_proxy="rsync://172.16.199.40:8080/"
+export no_proxy="localhost,127.0.0.1,192.168.1.1,::1,*.local"
+export HTTP_PROXY="http://172.16.199.40:8080/"
+export FTP_PROXY="ftp://172.16.199.40:8080/"
+export RSYNC_PROXY="rsync://172.16.199.40:8080/"
+export NO_PROXY="localhost,127.0.0.1,192.168.1.1,::1,*.local"
+export https_proxy="http://172.16.199.40:8080/"
+export HTTPS_PROXY="http://172.16.199.40:8080/"
